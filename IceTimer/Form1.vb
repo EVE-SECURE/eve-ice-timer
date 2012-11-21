@@ -20,38 +20,38 @@
     End Sub
 
     Private Sub Timer1_Tick(sender As System.Object, e As System.EventArgs) Handles Timer1.Tick
-        If cntrSec < 60 And cntrSec < 9 Then 'pokud je čítač sekund menší než 60 a současně menší než 9, pak
-            cntrSec += 1 ' čítač + 1
-            Sec = cntrSec 'přiřazení čítače proměnné sekund
-            strSec = "0" & CStr(Sec) 'převod na string
-        ElseIf cntrSec < 60 And cntrSec >= 9 Then ' pokud je čítač sekund menší než 60 a současně větší či roven 9, pak
-            cntrSec += 1 'čítač + 1
-            Sec = cntrSec 'přiřazení čítače proměnné sekund
-            strSec = CStr(Sec) 'převod na string
+        If cntrSec < 60 And cntrSec < 9 Then
+            cntrSec += 1
+            sec = cntrSec
+            strSec = "0" & CStr(sec)
+        ElseIf cntrSec < 60 And cntrSec >= 9 Then
+            cntrSec += 1
+            sec = cntrSec
+            strSec = CStr(sec)
 
-            If cntrSec = 60 And cntrMin < 9 Then 'pokud je čítač sekund roven 60 a současně čítač minut menší než 9, pak
-                cntrMin += 1 'čítač minut +1
+            If cntrSec = 60 And cntrMin < 9 Then
+                cntrMin += 1
                 Min = cntrMin
-                strMin = "0" & CStr(Min) 'převod na string pro jednočíselné minuty
-                strSec = "00" '60. sekunda se zobrazí jako 00
-                cntrSec = 0 'vynulován čítač sekund
+                strMin = "0" & CStr(Min)
+                strSec = "00"
+                cntrSec = 0
             ElseIf cntrSec = 60 And cntrMin >= 9 Then
                 cntrMin += 1
                 Min = cntrMin
-                strMin = CStr(Min) 'převod na string pro dvoučíselné minuty
+                strMin = CStr(Min)
                 strSec = "00"
                 cntrSec = 0
 
-                If cntrMin = 60 And cntrHour < 9 Then 'pokud čítač minut je roven 60 a současně čítač hodin je menší než 9, pak
-                    cntrHour += 1 'čítač hodin +1
+                If cntrMin = 60 And cntrHour < 9 Then
+                    cntrHour += 1
                     Hour = cntrHour
-                    strHour = "0" & CStr(Hour) 'převod na string pro jednočíselné hodiny
-                    strMin = "00" '60.minuta zobrazena jako 00
-                    cntrMin = 0 'vynulován čítač minut
+                    strHour = "0" & CStr(Hour)
+                    strMin = "00"
+                    cntrMin = 0
                 ElseIf cntrMin = 60 And cntrHour >= 9 Then
                     cntrHour += 1
                     Hour = cntrHour
-                    strHour = CStr(Hour) 'převod na string pro dvoučíselné hodiny
+                    strHour = CStr(Hour)
                     strMin = "00"
                     cntrMin = 0
                 End If
