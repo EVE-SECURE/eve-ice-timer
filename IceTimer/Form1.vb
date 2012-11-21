@@ -61,6 +61,12 @@
         lblTimeShow.Text = strHour & ":" & strMin & ":" & strSec
         prgrBar01.Value = prgrBarCntr
 
+        If prgrBarCntr = _totalMiningTime Then
+            Timer1.Enabled = False
+            MsgBox("Orehold of your " & _shipName & " is propably full!", MsgBoxStyle.Critical, "Orehold overload warning!")
+
+        End If
+
     End Sub
 
     Private Sub fMain_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
@@ -78,6 +84,7 @@
         Timer1.Enabled = True
         prgrBar01.Visible = True
         btnStart.Enabled = False
+        btnStart.Enabled = False
 
     End Sub
 
@@ -89,6 +96,7 @@
 
     Private Sub btnReset_Click(sender As System.Object, e As System.EventArgs) Handles btnReset.Click
         Timer1.Enabled = False
+        btnStart.Enabled = True
         cntrSec = 0
         cntrMin = 0
         cntrHour = 0
