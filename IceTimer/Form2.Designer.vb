@@ -23,6 +23,7 @@ Partial Class fSettings
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(fSettings))
         Me.lblSelShip = New System.Windows.Forms.Label()
         Me.cboxSelectShip = New System.Windows.Forms.ComboBox()
         Me.ShipsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -445,6 +446,7 @@ Partial Class fSettings
         Me.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MiningUpgradesBindingSource, "UpgradeName", True))
         Me.Font = New System.Drawing.Font("Segoe UI Symbol", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "fSettings"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
