@@ -76,33 +76,47 @@
         prgrBar01.Visible = False
         prgrBar01.Minimum = 0
         '-------------------------------loads config file content into variables
-        'Dim configLoad As IO.StreamReader
-        'Dim configContent As String = ""
-        'configLoad = New IO.StreamReader(_configLocation)
-        'configContent = configLoad.ReadToEnd()
-        'configLoad.Close()
+        If FileIO.FileSystem.FileExists(_configLocation) = True Then
+            Dim configLoad As IO.StreamReader
+            Dim configContent As String = ""
+            configLoad = New IO.StreamReader(_configLocation)
+            configContent = configLoad.ReadToEnd()
+            configLoad.Close()
 
-        'Dim configContentArray() As String = Split(configContent, vbCrLf)
-        'Dim _var As String = ""
-        'Dim _ident As String = ""
-        'Dim _value As String = ""
+            Dim configContentArray() As String = Split(configContent, vbCrLf)
+            Dim _var As String = ""
 
-        'For i As Integer = 0 To configContentArray.Count() - 1
-        '    For j As Integer = 0 To configContentArray(i).Length - 1
-        '        Dim ch As String = configContentArray(i).Substring(j, 1)
-        '        If ch = "=" Then
-        '            _ident = Trim(_var)
-        '            _var = ""
-        '        ElseIf ch = ";" Then
-        '            _value = Trim(_var)
-        '            _var = ""
-
-        '        Else
-        '            _var = _var & ch
-        '        End If
-        '    Next j
-        'Next i
-        '----------------------------end of config load
+            For i As Integer = 0 To configContentArray.Count() - 1
+                For j As Integer = 0 To configContentArray(i).Length - 1
+                    Dim ch As String = configContentArray(i).Substring(j, 1)
+                    If ch = "=" Then
+                        _ident = Trim(_var)
+                        _var = ""
+                    ElseIf ch = ";" Then
+                        _value = Trim(_var)
+                        _var = ""
+                        Try
+                            AssignValue(_ident, _value)
+                        Catch ex As Exception
+                            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error in inner function")
+                        End Try
+                    Else
+                            _var = _var & ch
+                    End If
+                Next j
+            Next i
+            '----------------------------end of config load
+            _cycleTimeReal = Math.Round(HarvestCycleTime(_cycleTimeNominal, _roleBonus, _skillBonusEhx _
+                                                     , _rigBonus, _implBonus, _skillLevelIceHBonus _
+                                                     , _MinUpgradesBonus, _numOfUpgrades, _skillLevelExh _
+                                                     , _skillLevelMinBarge), 0)
+            _totalMiningTime = Math.Round(TotalMiningTime(_oreHoldCap, _skillBonusMinBar, _skillLevelMinBarge, _cycleTimeReal _
+                                                          , _turretHardpointNo), 0)
+            Me.lblSelShipNameDisp.Text = _shipName
+            Me.lblHarvCycleTimeDisp.Text = Convert.ToString(_cycleTimeReal) & " seconds"
+            Me.lblTimeToMineDisp.Text = TimeToMineDisplay(_totalMiningTime)
+            Me.prgrBar01.Maximum = _totalMiningTime
+        End If
     End Sub
 
     Private Sub btnStart_Click(sender As System.Object, e As System.EventArgs) Handles btnStart.Click

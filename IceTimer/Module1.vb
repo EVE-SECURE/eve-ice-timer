@@ -7,9 +7,11 @@ Module Module1
     Public _shipIndex, _iceHarvesterIndex, _skillExhumerIndex, _skillMinBargeIndex, _skillIceHarvIndex, _selUpgrNameIndex _
         , _numOfSelIndex, _rigIndex, _implIndex As Integer
     
-    Public _shipName As String
+    Public _shipName As String = ""
     Public _numOfUpgrades() As Integer = ({0, 0, 0})
     Public _MinUpgradesBonus() As Decimal = ({0D, 0D, 0D})
+    Public _ident As String = ""
+    Public _value As String = ""
     Public _configLocation As String = FileIO.FileSystem.CurrentDirectory & "\config.txt"
     
     Function HarvestCycleTime(ByVal CycleTimeNominal As Integer, ByVal ShipRoleBonus As Decimal _
@@ -40,4 +42,65 @@ Module Module1
         _timeToMine = Convert.ToString(_min) & " minutes " & Convert.ToString(_rest) & " seconds"
         Return _timeToMine
     End Function
+
+    Function AssignValue(ByVal NameOfVariable As String, ByVal ValueOfVariable As String)
+        If NameOfVariable = "_shipName" Then
+            _shipName = ValueOfVariable
+        ElseIf NameOfVariable = "_roleBonus" Then
+            _roleBonus = Convert.ToDecimal(ValueOfVariable)
+        ElseIf NameOfVariable = "_skillBonusExh" Then
+            _skillBonusEhx = Convert.ToDecimal(ValueOfVariable)
+        ElseIf NameOfVariable = "_oreHoldCap" Then
+            _oreHoldCap = Convert.ToDecimal(ValueOfVariable)
+        ElseIf NameOfVariable = "_skillBonusMinBar" Then
+            _skillBonusMinBar = Convert.ToDecimal(ValueOfVariable)
+        ElseIf NameOfVariable = "_turretHardpointNo" Then
+            _turretHardpointNo = Convert.ToInt16(ValueOfVariable)
+        ElseIf NameOfVariable = "_shipIndex" Then
+            _shipIndex = Convert.ToInt16(ValueOfVariable)
+        ElseIf NameOfVariable = "_cycleTimeNominal" Then
+            _cycleTimeNominal = Convert.ToInt16(ValueOfVariable)
+        ElseIf NameOfVariable = "_iceHarvesterIndex" Then
+            _iceHarvesterIndex = Convert.ToInt16(ValueOfVariable)
+        ElseIf NameOfVariable = "_skillLevelExh" Then
+            _skillLevelExh = Convert.ToInt16(ValueOfVariable)
+        ElseIf NameOfVariable = "_skillExhumerIndex" Then
+            _skillExhumerIndex = Convert.ToInt16(ValueOfVariable)
+        ElseIf NameOfVariable = "_skillLevelMinBarge" Then
+            _skillLevelMinBarge = Convert.ToInt16(ValueOfVariable)
+        ElseIf NameOfVariable = "_skillMinBargeIndex" Then
+            _skillMinBargeIndex = Convert.ToInt16(ValueOfVariable)
+        ElseIf NameOfVariable = "_rigBonus" Then
+            _rigBonus = Convert.ToDecimal(ValueOfVariable)
+        ElseIf NameOfVariable = "_rigIndex" Then
+            _rigIndex = Convert.ToInt16(ValueOfVariable)
+        ElseIf NameOfVariable = "_implBonus" Then
+            _implBonus = Convert.ToDecimal(ValueOfVariable)
+        ElseIf NameOfVariable = "_implIndex" Then
+            _implIndex = Convert.ToInt16(ValueOfVariable)
+        ElseIf NameOfVariable = "_skillLevelIceHBonus" Then
+            _skillLevelIceHBonus = Convert.ToDecimal(ValueOfVariable)
+        ElseIf NameOfVariable = "_skillIceHarvIndex" Then
+            _skillIceHarvIndex = Convert.ToInt16(ValueOfVariable)
+        ElseIf NameOfVariable = "_MinUpgradesBonus(0)" Then
+            _MinUpgradesBonus(0) = Convert.ToDecimal(ValueOfVariable)
+        ElseIf NameOfVariable = "_selUpgrNameIndex" Then
+            _selUpgrNameIndex = Convert.ToInt16(ValueOfVariable)
+        ElseIf NameOfVariable = "_MinUpgradesBonus(1)" Then
+            _MinUpgradesBonus(1) = Convert.ToDecimal(ValueOfVariable)
+        ElseIf NameOfVariable = "_MinUpgradesBonus(2)" Then
+            _MinUpgradesBonus(2) = Convert.ToDecimal(ValueOfVariable)
+        ElseIf NameOfVariable = "_numOfUpgrades(0)" Then
+            _numOfUpgrades(0) = Convert.ToInt16(ValueOfVariable)
+        ElseIf NameOfVariable = "_numOfSelIndex" Then
+            _numOfSelIndex = Convert.ToInt16(ValueOfVariable)
+        ElseIf NameOfVariable = "_numOfUpgrades(1)" Then
+            _numOfUpgrades(1) = Convert.ToInt16(ValueOfVariable)
+        ElseIf NameOfVariable = "_numOfUpgrades(2)" Then
+            _numOfUpgrades(2) = Convert.ToInt16(ValueOfVariable)
+        
+        End If
+
+    End Function
+
 End Module
