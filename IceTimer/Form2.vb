@@ -65,33 +65,33 @@ Public Class fSettings
                         Dim SettingsToWrite As StreamWriter
                         SettingsToWrite = New StreamWriter(_configLocation, False)
 
-                        Dim _dataFill As String = "_shipName=" & _shipName & vbCrLf _
-                                     & "_roleBonus=" & Convert.ToString(_roleBonus) & vbCrLf _
-                                     & "_skillBonusEhx=" & Convert.ToString(_skillBonusEhx) & vbCrLf _
-                                     & "_oreHoldCap=" & Convert.ToString(_oreHoldCap) & vbCrLf _
-                                     & "_skillBonusMinBar=" & Convert.ToString(_skillBonusMinBar) & vbCrLf _
-                                     & "_turretHardpointNo=" & Convert.ToString(_turretHardpointNo) & vbCrLf _
-                                     & "_shipIndex=" & Convert.ToString(_shipIndex) & vbCrLf _
-                                     & "_cycleTimeNominal=" & Convert.ToString(_cycleTimeNominal) & vbCrLf _
-                                     & "_iceHarvesterIndex=" & Convert.ToString(_iceHarvesterIndex) & vbCrLf _
-                                     & "_skillLevelExh=" & Convert.ToString(_skillLevelExh) & vbCrLf _
-                                     & "_skillExhumerIndex=" & Convert.ToString(_skillExhumerIndex) & vbCrLf _
-                                     & "_skillLevelMinBarge=" & Convert.ToString(_skillLevelMinBarge) & vbCrLf _
-                                     & "_skillMinBargeIndex=" & Convert.ToString(_skillMinBargeIndex) & vbCrLf _
-                                     & "_rigBonus=" & Convert.ToString(_rigBonus) & vbCrLf _
-                                     & "_rigIndex=" & Convert.ToString(_rigIndex) & vbCrLf _
-                                     & "_implBonus=" & Convert.ToString(_implBonus) & vbCrLf _
-                                     & "_implIndex=" & Convert.ToString(_implIndex) & vbCrLf _
-                                     & "_skillLevelIceHBonus=" & Convert.ToString(_skillLevelIceHBonus) & vbCrLf _
-                                     & "_skillIceHarvIndex=" & Convert.ToString(_skillIceHarvIndex) & vbCrLf _
-                                     & "_MinUpgradesBonus(0)=" & Convert.ToString(_MinUpgradesBonus(0)) & vbCrLf _
-                                     & "_selUpgrNameIndex=" & Convert.ToString(_selUpgrNameIndex) & vbCrLf _
-                                     & "_MinUpgradesBonus(1)=" & Convert.ToString(_MinUpgradesBonus(1)) & vbCrLf _
-                                     & "_MinUpgradesBonus(2)=" & Convert.ToString(_MinUpgradesBonus(2)) & vbCrLf _
-                                     & "_numOfUpgrades(0)=" & Convert.ToString(_numOfUpgrades(0)) & vbCrLf _
-                                     & "_numOfSelIndex=" & Convert.ToString(_numOfSelIndex) & vbCrLf _
-                                     & "_numOfUpgrades(1)=" & Convert.ToString(_numOfUpgrades(1)) & vbCrLf _
-                                     & "_numOfUpgrades(2)=" & Convert.ToString(_numOfUpgrades(2)) & vbCrLf
+                        Dim _dataFill As String = "_shipName=" & _shipName & ";" & vbCrLf _
+                                     & "_roleBonus=" & Convert.ToString(_roleBonus) & ";" & vbCrLf _
+                                     & "_skillBonusEhx=" & Convert.ToString(_skillBonusEhx) & ";" & vbCrLf _
+                                     & "_oreHoldCap=" & Convert.ToString(_oreHoldCap) & ";" & vbCrLf _
+                                     & "_skillBonusMinBar=" & Convert.ToString(_skillBonusMinBar) & ";" & vbCrLf _
+                                     & "_turretHardpointNo=" & Convert.ToString(_turretHardpointNo) & ";" & vbCrLf _
+                                     & "_shipIndex=" & Convert.ToString(_shipIndex) & ";" & vbCrLf _
+                                     & "_cycleTimeNominal=" & Convert.ToString(_cycleTimeNominal) & ";" & vbCrLf _
+                                     & "_iceHarvesterIndex=" & Convert.ToString(_iceHarvesterIndex) & ";" & vbCrLf _
+                                     & "_skillLevelExh=" & Convert.ToString(_skillLevelExh) & ";" & vbCrLf _
+                                     & "_skillExhumerIndex=" & Convert.ToString(_skillExhumerIndex) & ";" & vbCrLf _
+                                     & "_skillLevelMinBarge=" & Convert.ToString(_skillLevelMinBarge) & ";" & vbCrLf _
+                                     & "_skillMinBargeIndex=" & Convert.ToString(_skillMinBargeIndex) & ";" & vbCrLf _
+                                     & "_rigBonus=" & Convert.ToString(_rigBonus) & ";" & vbCrLf _
+                                     & "_rigIndex=" & Convert.ToString(_rigIndex) & ";" & vbCrLf _
+                                     & "_implBonus=" & Convert.ToString(_implBonus) & ";" & vbCrLf _
+                                     & "_implIndex=" & Convert.ToString(_implIndex) & ";" & vbCrLf _
+                                     & "_skillLevelIceHBonus=" & Convert.ToString(_skillLevelIceHBonus) & ";" & vbCrLf _
+                                     & "_skillIceHarvIndex=" & Convert.ToString(_skillIceHarvIndex) & ";" & vbCrLf _
+                                     & "_MinUpgradesBonus(0)=" & Convert.ToString(_MinUpgradesBonus(0)) & ";" & vbCrLf _
+                                     & "_selUpgrNameIndex=" & Convert.ToString(_selUpgrNameIndex) & ";" & vbCrLf _
+                                     & "_MinUpgradesBonus(1)=" & Convert.ToString(_MinUpgradesBonus(1)) & ";" & vbCrLf _
+                                     & "_MinUpgradesBonus(2)=" & Convert.ToString(_MinUpgradesBonus(2)) & ";" & vbCrLf _
+                                     & "_numOfUpgrades(0)=" & Convert.ToString(_numOfUpgrades(0)) & ";" & vbCrLf _
+                                     & "_numOfSelIndex=" & Convert.ToString(_numOfSelIndex) & ";" & vbCrLf _
+                                     & "_numOfUpgrades(1)=" & Convert.ToString(_numOfUpgrades(1)) & ";" & vbCrLf _
+                                     & "_numOfUpgrades(2)=" & Convert.ToString(_numOfUpgrades(2)) & ";" & vbCrLf
 
                         SettingsToWrite.Write(_dataFill)
                         SettingsToWrite.Close()
