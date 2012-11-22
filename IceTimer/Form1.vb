@@ -75,8 +75,14 @@
         lblTimeShow.Text = "--:--:--"
         prgrBar01.Visible = False
         prgrBar01.Minimum = 0
+        '-------------------------------loads config file content into variables
+        Dim configLoad As IO.StreamReader
+        Dim configContent As String = ""
+        configLoad = New IO.StreamReader(_configLocation)
+        configContent = configLoad.ReadToEnd()
+        configLoad.Close()
 
-
+        Dim configContentArray() As String = Split(configContent, vbCrLf)
 
     End Sub
 
