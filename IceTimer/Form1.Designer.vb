@@ -27,7 +27,6 @@ Partial Class fMain
         Me.lblTimeShow = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ExportSettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EndToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RelevantSkillsAndEquipmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -67,21 +66,15 @@ Partial Class fMain
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExportSettingsToolStripMenuItem, Me.EndToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EndToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "F&ile"
         '
-        'ExportSettingsToolStripMenuItem
-        '
-        Me.ExportSettingsToolStripMenuItem.Name = "ExportSettingsToolStripMenuItem"
-        Me.ExportSettingsToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
-        Me.ExportSettingsToolStripMenuItem.Text = "E&xport settings"
-        '
         'EndToolStripMenuItem
         '
         Me.EndToolStripMenuItem.Name = "EndToolStripMenuItem"
-        Me.EndToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
+        Me.EndToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.EndToolStripMenuItem.Text = "En&d"
         '
         'SettingsToolStripMenuItem
@@ -229,7 +222,6 @@ Partial Class fMain
     Friend WithEvents lblTimeShow As System.Windows.Forms.Label
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents FileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ExportSettingsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EndToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SettingsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RelevantSkillsAndEquipmentToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

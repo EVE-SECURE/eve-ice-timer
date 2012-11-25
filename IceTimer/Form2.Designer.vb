@@ -126,7 +126,7 @@ Partial Class fSettings
         Me.cboxExhSkillSelect.FormattingEnabled = True
         Me.cboxExhSkillSelect.Location = New System.Drawing.Point(473, 13)
         Me.cboxExhSkillSelect.Name = "cboxExhSkillSelect"
-        Me.cboxExhSkillSelect.Size = New System.Drawing.Size(101, 25)
+        Me.cboxExhSkillSelect.Size = New System.Drawing.Size(153, 25)
         Me.cboxExhSkillSelect.TabIndex = 11
         Me.cboxExhSkillSelect.ValueMember = "SkillLevel"
         '
@@ -287,7 +287,7 @@ Partial Class fSettings
         Me.cboxMinBargeSkillSelect.FormattingEnabled = True
         Me.cboxMinBargeSkillSelect.Location = New System.Drawing.Point(473, 53)
         Me.cboxMinBargeSkillSelect.Name = "cboxMinBargeSkillSelect"
-        Me.cboxMinBargeSkillSelect.Size = New System.Drawing.Size(101, 25)
+        Me.cboxMinBargeSkillSelect.Size = New System.Drawing.Size(153, 25)
         Me.cboxMinBargeSkillSelect.TabIndex = 30
         Me.cboxMinBargeSkillSelect.ValueMember = "SkillLevel"
         '
@@ -311,7 +311,7 @@ Partial Class fSettings
         Me.cboxIceHLevelSel.FormattingEnabled = True
         Me.cboxIceHLevelSel.Location = New System.Drawing.Point(474, 87)
         Me.cboxIceHLevelSel.Name = "cboxIceHLevelSel"
-        Me.cboxIceHLevelSel.Size = New System.Drawing.Size(100, 25)
+        Me.cboxIceHLevelSel.Size = New System.Drawing.Size(152, 25)
         Me.cboxIceHLevelSel.TabIndex = 32
         '
         'IceHarvesterSkillBindingSource
@@ -347,7 +347,7 @@ Partial Class fSettings
         Me.cboxSelUpgrNo01.Items.AddRange(New Object() {"0", "1", "2", "3"})
         Me.cboxSelUpgrNo01.Location = New System.Drawing.Point(473, 135)
         Me.cboxSelUpgrNo01.Name = "cboxSelUpgrNo01"
-        Me.cboxSelUpgrNo01.Size = New System.Drawing.Size(101, 25)
+        Me.cboxSelUpgrNo01.Size = New System.Drawing.Size(153, 25)
         Me.cboxSelUpgrNo01.TabIndex = 38
         '
         'cboxSelUpgrNo03
@@ -356,7 +356,7 @@ Partial Class fSettings
         Me.cboxSelUpgrNo03.Items.AddRange(New Object() {"0", "1", "2", "3"})
         Me.cboxSelUpgrNo03.Location = New System.Drawing.Point(473, 231)
         Me.cboxSelUpgrNo03.Name = "cboxSelUpgrNo03"
-        Me.cboxSelUpgrNo03.Size = New System.Drawing.Size(101, 25)
+        Me.cboxSelUpgrNo03.Size = New System.Drawing.Size(153, 25)
         Me.cboxSelUpgrNo03.TabIndex = 39
         Me.cboxSelUpgrNo03.Visible = False
         '
@@ -366,7 +366,7 @@ Partial Class fSettings
         Me.cboxSelUpgrNo02.Items.AddRange(New Object() {"0", "1", "2", "3"})
         Me.cboxSelUpgrNo02.Location = New System.Drawing.Point(473, 177)
         Me.cboxSelUpgrNo02.Name = "cboxSelUpgrNo02"
-        Me.cboxSelUpgrNo02.Size = New System.Drawing.Size(101, 25)
+        Me.cboxSelUpgrNo02.Size = New System.Drawing.Size(153, 25)
         Me.cboxSelUpgrNo02.TabIndex = 40
         Me.cboxSelUpgrNo02.Visible = False
         '
@@ -417,7 +417,7 @@ Partial Class fSettings
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(782, 453)
+        Me.ClientSize = New System.Drawing.Size(647, 453)
         Me.Controls.Add(Me.cboxSelMinUpg03)
         Me.Controls.Add(Me.cboxSelMinUpg02)
         Me.Controls.Add(Me.btnPlusUpgr)
@@ -443,14 +443,13 @@ Partial Class fSettings
         Me.Controls.Add(Me.lblExhSkillLbl)
         Me.Controls.Add(Me.cboxSelectShip)
         Me.Controls.Add(Me.lblSelShip)
-        Me.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MiningUpgradesBindingSource, "UpgradeName", True))
         Me.Font = New System.Drawing.Font("Segoe UI Symbol", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "fSettings"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "Choose your equipment and skills "
+        Me.Text = "Select you skill and equipment"
         CType(Me.ShipsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DtbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SkillsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

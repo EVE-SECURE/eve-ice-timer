@@ -1,5 +1,6 @@
 ﻿Imports Microsoft.VisualBasic.FileIO, System.Data, System.Math, System.IO
 Public Class fSettings
+    '--------------------sets variables for this form
     Dim _checkedItemsCntr As Integer = 0
     Dim _firstRun As Boolean = True
     Dim btnClickCntr As Integer = 0
@@ -9,7 +10,6 @@ Public Class fSettings
 
 
     Private Sub Form2_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-
         '---------------------------------------------------
         'TODO: This line of code loads data into the 'DtbDataSet.IceHarvesterSkill' table. You can move, or remove it, as needed.
         Me.IceHarvesterSkillTableAdapter.Fill(Me.DtbDataSet.IceHarvesterSkill)
@@ -30,6 +30,7 @@ Public Class fSettings
         'TODO: This line of code loads data into the 'DtbDataSet.Ships' table. You can move, or remove it, as needed.
         Me.ShipsTableAdapter.Fill(Me.DtbDataSet.Ships)
         '---------------------------------------------------
+        '-----------------------------sets properties of some controls onload
         btnPlusUpgr.Visible = False
         cboxSelMinUpg02.Visible = False
         cboxSelMinUpg02.SelectedIndex = 0
@@ -45,26 +46,27 @@ Public Class fSettings
 
     End Sub
     Private Sub btnOK_Click(sender As System.Object, e As System.EventArgs) Handles btnOK.Click
+        '-----------------------------routine for saving, computing and displaying values
+        '-----------------------------needed restrictions to make computation possible
         If _turretHardpointNo >= 1 Then
             If _cycleTimeNominal > 0 Then
                 If (_numOfUpgrades(0) + _numOfUpgrades(1) + _numOfUpgrades(2)) <= 3 Then
+                    '-----------------computes real cycle time and total mining time (via public functions(module1))
                     _cycleTimeReal = Math.Round(HarvestCycleTime(_cycleTimeNominal, _roleBonus, _skillBonusEhx _
                                                       , _rigBonus, _implBonus, _skillLevelIceHBonus _
                                                       , _MinUpgradesBonus, _numOfUpgrades, _skillLevelExh _
                                                       , _skillLevelMinBarge), 0)
                     _totalMiningTime = Math.Round(TotalMiningTime(_oreHoldCap, _skillBonusMinBar, _skillLevelMinBarge, _cycleTimeReal _
                                                                   , _turretHardpointNo), 0)
-
+                    '-----------------displays and sets computed values
                     My.Forms.fMain.lblSelShipNameDisp.Text = _shipName
                     My.Forms.fMain.lblHarvCycleTimeDisp.Text = Convert.ToString(_cycleTimeReal) & " seconds"
                     My.Forms.fMain.lblTimeToMineDisp.Text = TimeToMineDisplay(_totalMiningTime)
                     My.Forms.fMain.prgrBar01.Maximum = _totalMiningTime
-
-
+                    '-----------------writes selected items in settings form to config file
                     Try
                         Dim SettingsToWrite As StreamWriter
                         SettingsToWrite = New StreamWriter(_configLocation, False)
-
                         Dim _dataFill As String = "_shipName=" & _shipName & ";" & vbCrLf _
                                      & "_roleBonus=" & Convert.ToString(_roleBonus) & ";" & vbCrLf _
                                      & "_skillBonusEhx=" & Convert.ToString(_skillBonusEhx) & ";" & vbCrLf _
@@ -100,7 +102,6 @@ Public Class fSettings
                                & Convert.ToString(ex.InnerException), MsgBoxStyle.Critical _
                                , "Error writing file")
                     End Try
-
                     Me.DialogResult = Windows.Forms.DialogResult.OK
                 Else
                     MsgBox("Cannot have more then 3 mining upgrades selected!" & vbCrLf _
@@ -114,12 +115,8 @@ Public Class fSettings
         End If
     End Sub
 
-    Private Sub btnReset_Click(sender As System.Object, e As System.EventArgs) Handles btnReset.Click
-
-    End Sub
 
     Private Sub btnCancel_Click(sender As System.Object, e As System.EventArgs) Handles btnCancel.Click
-
         DialogResult = Windows.Forms.DialogResult.Cancel
     End Sub
 
