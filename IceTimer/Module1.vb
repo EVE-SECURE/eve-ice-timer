@@ -14,6 +14,34 @@ Module Module1
     Public _ident As String = ""
     Public _value As String = ""
     Public _configLocation As String = FileIO.FileSystem.CurrentDirectory & "\config.txt"
+    '--------------tooltips text definition
+    Public _tp01SelectShip As String = "Select your harvesting ship." _
+                                        & vbCrLf _
+                                        & "This value must be selected."
+
+    Public _tp01SelectHarvester As String = "Select your harvester." _
+                                            & vbCrLf _
+                                          & "Computation function assumes all harvesters mounted are of same type." _
+                                          & vbCrLf _
+                                          & "This value must be selected."
+    Public _tp01SelectNoOfUpgr As String = "Select number of selected mining upgrade module." _
+                                           & vbCrLf _
+                                         & "Maximum number of selected upgrade modules is 3."
+    Public _tp01SelectSkillExhumer As String = "Select trained level of Exhumers skill." _
+                                               & vbCrLf _
+                                             & "This value allows for ship bonuses, if applicable."
+    Public _tp01SelectSkillMinBarge As String = "Select trained level of Mining Barges skill." _
+                                              & vbCrLf _
+                                              & "This values allows for ship bonuses, if applicable."
+    Public _tp01SelectMinUpg As String = "Select mining upgrade, if used."
+    Public _tp01SelectRig As String = "Select rig, if used."
+    Public _tp01SelectImplant As String = "Select implant, if used."
+    Public _tp01SelectSkillIceHarvesting As String = "Select trained level of Ice Harvesting skill."
+    Public _tp01AddingBtn As String = "Add another mining upgrade selection box." _
+                                    & vbCrLf _
+                                    & "Can add 2 mining upgrades at max."
+
+
     '--------------function to compute real harvesting cycle time
     Function HarvestCycleTime(ByVal CycleTimeNominal As Integer, ByVal ShipRoleBonus As Decimal _
                               , ByVal ExhSkillShipBonus As Decimal _

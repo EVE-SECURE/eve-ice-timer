@@ -40,9 +40,31 @@ Public Class fSettings
         cboxSelUpgrNo02.SelectedIndex = 0
         cboxSelUpgrNo03.Visible = False
         cboxSelUpgrNo03.SelectedIndex = 0
-        '---------------------------------------------------
+        '-------------------------------initializes tooltip infos
+        Dim _toolTip01 As New ToolTip()
+        _toolTip01.AutoPopDelay = 10000
+        _toolTip01.InitialDelay = 0
+        _toolTip01.ReshowDelay = 100
+        _toolTip01.ShowAlways = True
+        _toolTip01.ToolTipTitle = "Please note this:"
+        _toolTip01.UseAnimation = True
+        _toolTip01.UseFading = True
+        _toolTip01.ToolTipIcon = ToolTipIcon.Info
 
-
+        _toolTip01.SetToolTip(Me.cboxSelectHarvester, _tp01SelectHarvester)
+        _toolTip01.SetToolTip(Me.cboxSelectShip, _tp01SelectShip)
+        _toolTip01.SetToolTip(Me.cboxExhSkillSelect, _tp01SelectSkillExhumer)
+        _toolTip01.SetToolTip(Me.cboxMinBargeSkillSelect, _tp01SelectSkillMinBarge)
+        _toolTip01.SetToolTip(Me.cboxIceHLevelSel, _tp01SelectSkillIceHarvesting)
+        _toolTip01.SetToolTip(Me.cboxSelMinUpg01, _tp01SelectMinUpg)
+        _toolTip01.SetToolTip(Me.cboxSelMinUpg02, _tp01SelectMinUpg)
+        _toolTip01.SetToolTip(Me.cboxSelMinUpg03, _tp01SelectMinUpg)
+        _toolTip01.SetToolTip(Me.cboxSelUpgrNo01, _tp01SelectNoOfUpgr)
+        _toolTip01.SetToolTip(Me.cboxSelUpgrNo02, _tp01SelectNoOfUpgr)
+        _toolTip01.SetToolTip(Me.cboxSelUpgrNo03, _tp01SelectNoOfUpgr)
+        _toolTip01.SetToolTip(Me.cboxSelectRig, _tp01SelectRig)
+        _toolTip01.SetToolTip(Me.cboxSelectImplant, _tp01SelectImplant)
+        _toolTip01.SetToolTip(Me.btnPlusUpgr, _tp01AddingBtn)
 
     End Sub
     Private Sub btnOK_Click(sender As System.Object, e As System.EventArgs) Handles btnOK.Click

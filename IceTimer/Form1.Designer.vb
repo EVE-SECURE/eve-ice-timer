@@ -30,6 +30,7 @@ Partial Class fMain
         Me.EndToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RelevantSkillsAndEquipmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnStart = New System.Windows.Forms.Button()
         Me.btnReset = New System.Windows.Forms.Button()
         Me.btnStop = New System.Windows.Forms.Button()
@@ -41,6 +42,7 @@ Partial Class fMain
         Me.lblHarvCycleTimeDisp = New System.Windows.Forms.Label()
         Me.lblTimeToMineDisp = New System.Windows.Forms.Label()
         Me.prgrBar01 = New System.Windows.Forms.ProgressBar()
+        Me.AboutToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -57,7 +59,7 @@ Partial Class fMain
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.SettingsToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.SettingsToolStripMenuItem, Me.AboutToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(383, 24)
@@ -74,7 +76,7 @@ Partial Class fMain
         'EndToolStripMenuItem
         '
         Me.EndToolStripMenuItem.Name = "EndToolStripMenuItem"
-        Me.EndToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EndToolStripMenuItem.Size = New System.Drawing.Size(94, 22)
         Me.EndToolStripMenuItem.Text = "En&d"
         '
         'SettingsToolStripMenuItem
@@ -89,6 +91,13 @@ Partial Class fMain
         Me.RelevantSkillsAndEquipmentToolStripMenuItem.Name = "RelevantSkillsAndEquipmentToolStripMenuItem"
         Me.RelevantSkillsAndEquipmentToolStripMenuItem.Size = New System.Drawing.Size(231, 22)
         Me.RelevantSkillsAndEquipmentToolStripMenuItem.Text = "&Relevant skills and equipment"
+        '
+        'AboutToolStripMenuItem
+        '
+        Me.AboutToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem1})
+        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
+        Me.AboutToolStripMenuItem.Text = "&Help"
         '
         'btnStart
         '
@@ -186,6 +195,12 @@ Partial Class fMain
         Me.prgrBar01.TabIndex = 11
         Me.prgrBar01.Visible = False
         '
+        'AboutToolStripMenuItem1
+        '
+        Me.AboutToolStripMenuItem1.Name = "AboutToolStripMenuItem1"
+        Me.AboutToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.AboutToolStripMenuItem1.Text = "&About"
+        '
         'fMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
@@ -236,5 +251,7 @@ Partial Class fMain
     Friend WithEvents lblHarvCycleTimeDisp As System.Windows.Forms.Label
     Friend WithEvents lblTimeToMineDisp As System.Windows.Forms.Label
     Friend WithEvents prgrBar01 As System.Windows.Forms.ProgressBar
+    Friend WithEvents AboutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AboutToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
 
 End Class

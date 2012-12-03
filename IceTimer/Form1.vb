@@ -157,4 +157,7 @@
 
     End Sub
 
+    Private Sub AboutToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles AboutToolStripMenuItem1.Click
+        My.Forms.AboutBox1.Show()
+    End Sub
 End Class
